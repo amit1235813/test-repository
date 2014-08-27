@@ -1,0 +1,63 @@
+/* this is my custom CSS */
+html * {
+  font-family: Verdana, sans-serif;
+}
+
+
+  body {
+	padding-top: 50px;
+}
+
+#row1 {
+	background-color: #8050D7;
+}
+
+#exam, #activity {
+	text-align: center;
+}
+
+
+.glyphicon-arrow-down {
+	color : #7348C2;
+}	
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #8050D7;
+  border-color: #7348C2;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: #5A3896;
+  border-color: #5A3896;
+}
+
+.navbar-inverse .navbar-toggle {
+  color: white;
+  font-weight: bold;
+  border-color: white;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+.tab-pane {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 0.8em;
+}
+
+#testarea {
+  padding-top: 10px;
+  width: 80%;
+}
+
+

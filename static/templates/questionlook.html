@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Questions</title>
+</head>
+<body>
+
+    <h1> Revelio! </h1>
+    {% for Question in Questions %}
+        <br>
+        <p> {{ Question.question_id }} {{ Question.timestamp }} </p>
+        <h2> {{ Question.question }} </h2>
+        <h4> {{ Question.option_1 }} </h4>
+        <h4> {{ Question.option_2 }} </h4>
+        <h4> {{ Question.option_3 }} </h4>
+        <h4> {{ Question.option_4 }} </h4>
+    {% endfor %}
+</body>
+</html>

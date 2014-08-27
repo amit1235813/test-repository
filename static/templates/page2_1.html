@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="utf-8">
+    <title>My Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+    <script src="/static/js/respond.js"></script>
+
+</head>
+<body>
+
+<div>
+
+   {% include 'navbar.html' %}
+
+   <!-- list navigation for tabs -->
+
+    <div>
+        <div>
+           Subject
+                     <ul class="nav nav-tabs">
+                        <li><a href="#" id="phy" data-toggle="tab"> Physics</a></li>
+                        <li><a href="#" id="chem" data-toggle="tab"> Chemistry</a></li>
+                        <li><a href="#" id="maths" data-toggle="tab"> Mathematics</a></li>
+                     </ul>
+        </div>
+        <div>
+            Chapter
+                     <ul class="nav nav-tabs" id = "phych12" >
+                        <li><a href="#" id="elfch" data-toggle="tab"> Electric Fields and Charges</a></li>
+                        <li><a href="#" id="elpac" data-toggle="tab"> Electrostatic Potential And Capacitance</a></li>
+                        <li><a href="#" id="celec" data-toggle="tab"> Current Electricity</a></li>
+                     </ul>
+
+                    <ul class="nav nav-tabs" id = "chemch12">
+                        <li><a href="#" id="tsost" data-toggle="tab"> The Solid State</a></li>
+                        <li><a href="#" id="solns" data-toggle="tab"> Solutions</a></li>
+                        <li><a href="#" id="elche" data-toggle="tab"> Electrochemistry</a></li>
+                    </ul>
+
+                    <ul class="nav nav-tabs" id = "mathsch12">
+                        <li><a href="#" id="reafu" data-toggle="tab"> Relations and Functions</a></li>
+                        <li><a href="#" id="intrf" data-toggle="tab"> Inverse Trigonometric Functions</a></li>
+                        <li><a href="#" id="mtrcs" data-toggle="tab"> Matrices</a></li>
+                    </ul>
+        </div>
+        <div>
+            Topic
+                     <ul class="nav nav-tabs">
+                        <li><a href="#" id="charges" data-toggle="tab"> Electric Charges</a></li>
+                        <li><a href="#" id="conductor" data-toggle="tab"> Conductors and Insulators</a></li>
+                        <li><a href="#" id="induction" data-toggle="tab"> Charging by Induction</a></li>
+                        <li><a href="#" id="properties" data-toggle="tab"> Basic Properties of Electric Charge</a></li>
+                     </ul>
+        </div>
+        <div>
+           Type
+                     <ul class="nav nav-tabs">
+                        <li><a href="#" id="easy" data-toggle="tab"> Easy</a></li>
+                        <li><a href="#" id="int" data-toggle="tab"> Intermediate</a></li>
+                        <li><a href="#" id="adv" data-toggle="tab"> Advanced</a></li>
+                     </ul>
+        </div>
+    </div>
+
+<!-- text for each callout 
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="ch1">
+             <p>Questions from Chapter 1</p>
+            </div>
+    
+            <div class="tab-pane fade" id="ch2">
+            <p>Questions from Chapter 2</p>
+            </div>
+    
+            <div class="tab-pane fade" id="ch3">
+             <p>Questions from Chapter 3</p>
+            </div>
+    
+        </div>   -->
+        <div id="testarea">
+            {% for Question in Questions %}
+                <br>
+                <p> {{ Question.question_id }} {{ Question.timestamp }} </p>
+                <h2> {{ Question.question }} </h2>
+                <h4> {{ Question.option_1 }} </h4>
+                <h4> {{ Question.option_2 }} </h4>
+                <h4> {{ Question.option_3 }} </h4>
+                <h4> {{ Question.option_4 }} </h4>
+            {% endfor %}
+        </div>
+
+
+</div> <!-- end container -->
+
+<!-- javascript -->
+<script>
+// Opening a practice set
+
+$(document).ready(function(){
+  $("#phy" && "#ch1" && "#induction" && "#int").click(function(){
+    $('#testarea').load('{% url 'questionlook' %}');
+  });
+});
+</script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script>
+        $(function () {
+            $('.nav-tabs a:first').tab('show');
+        });
+</script>
+
+<script>
+// Changes what buttons users see based on what they select. Bazinga!
+/*
+$(document).ready(function() {
+    $("a").click(function() {
+        switch($(this).attr("id"))
+        {
+            case "phy":
+                $("#phych12").show(400, function(){
+        $(this).siblings().hide(400);
+        });
+                break;
+            case "chem":
+                $("#chemch12").show(400, function(){
+        $(this).siblings().hide(400);
+        });
+                break;
+            case "maths":
+                $("#mathsch12").show(400, function(){
+        $(this).siblings().hide(400);
+        });
+                break;
+        }
+    });
+});
+*/
+
+</script>
+
+</body>
+
+</html>
+
