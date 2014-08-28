@@ -4,6 +4,7 @@ from django.utils.encoding import smart_text
 # Create your models here.
 # Change from HP
 
+
 class Questions(models.Model):
     question_id = models.CharField(max_length=10, null=False, blank=False)
     question = models.CharField(max_length=1200, null=False, blank=False)
