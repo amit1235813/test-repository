@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.encoding import smart_text
 
 # Create your models here.
-# Change from HP
+# Change from HP.
 
 
 class Questions(models.Model):
