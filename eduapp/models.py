@@ -3,6 +3,7 @@ from django.utils.encoding import smart_text
 
 # Create your models here.
 # Test Change to see who the author is
+# Test change 2 by amit
 
 class Questions(models.Model):
     question_id = models.CharField(max_length=10, null=False, blank=False)
