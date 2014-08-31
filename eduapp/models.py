@@ -18,3 +18,12 @@ class Questions(models.Model):
 
     def __unicode__(self):
         return smart_text(self.question_id)
+
+
+    def __str__(self):
+        return self.question_id + ': ' + \
+                self.question + '\n' + \
+                self.option_1 + '\n' + \
+                self.option_2 + '\n' + \
+                self.option_3 + '\n' + \
+                self.option_4
